@@ -26,3 +26,13 @@ For loading, ‘0’ must be given as input to the select line and for shifting,
 For AND gates, A1, A3 and A5, one of the inputs is the Shift/Load select line and the other input is connected to the outputs Q0, Q1 and Q2 of respective flip flops.  The outputs of AND gates A1 and A2 are connected to OR gate O1, the outputs of AND gates A2 and A4 are connected to OR gate O2, The outputs of AND gates A5 and A6 are connected to OR gate O3. The outputs of OR gates O1, O2 and O3 are connected to inputs of Q1, Q2 and Q3 respectively. The AND gates and OR gates, together, perform the function of a multiplexer. All the flip flops are to be connected in a single CLK pulse and the flip flops outputs will be in the serial data output.
 
 Refer to the truth table below to understand the progress after each clock pulse.
+
+<p align='center'> 
+  <img src='https://user-images.githubusercontent.com/110677094/183254713-54e75bc6-0135-470e-98d9-0218d492a696.png'>
+</p>
+
+
+<p align='center'>
+  <img src='https://user-images.githubusercontent.com/110677094/183254665-b745fa26-501c-4d35-a787-4001b81f4df0.png'>
+</p>
+
