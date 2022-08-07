@@ -65,7 +65,8 @@ GTKWave is a fully featured GTK+ based wave viewer for Unix, Win32, and Mac OSX 
     
     
     $   sudo apt-get update
-    $   sudo apt-get install iverilog gtkwave
+    $   sudo apt-get install iverilog 
+    $   sudo apt-get install gtkwave
     
    </li>
 </ul>
