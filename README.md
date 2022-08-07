@@ -33,10 +33,10 @@ The connections are made as follows
 -The outputs of OR gates O1, O2 and O3 are connected to inputs of Q1, Q2 and Q3 respectively. The AND gates and OR gates, together, perform the function of a multiplexer.
 -All the flip flops are to be connected in a single CLK pulse and the flip flops outputs will be in the serial data output. The serial output is taken at the output Q3 of flipflop D3.
 
-Refer to the truth table below to understand the progress after each clock pulse.
+Refer to the truth table below to understand the progress after each clock pulse. In the below truth table, input is taken as '1011'. Observe 'Q3' at each clock cycle for the serial output.
 
 <p align='center'> 
-  <img src='https://user-images.githubusercontent.com/110677094/183254713-54e75bc6-0135-470e-98d9-0218d492a696.png'>
+  <img src='https://user-images.githubusercontent.com/110677094/183281909-80ee7817-a4a4-4293-96cf-d459695a2f60.png'>
 </p>
 
 
@@ -60,16 +60,30 @@ GTKWave is a fully featured GTK+ based wave viewer for Unix, Win32, and Mac OSX 
 
 Open the terminal and enter the following commands.
 
+```
+$   sudo apt-get update
+$   sudo apt-get install iverilog gtkwave
+```
+
 #### Functional Simulation
 
 To clone this repository and download the Netlist files for Simulation, enter the below commands in the terminal.
+
+```
+$   sudo apt install -y git
+$   git clone https://github.com/mahati-basavaraju/iiitb_piso
+$   cd iiitb_piso
+$   iverilog iiitb_piso.v iiitb_pwm_piso_tb.v
+$   ./a.out
+$   gtkwave iiitb_piso.vcd
+```
 
 ## Functional Characteristics
 
 Find below simulation results when a 4-bit input '1011' is provided. Note that data_in is the input data, data_out is the output register, q is a temporary register to indicate shifting and, clk and load are clock and shift/load signals respectively.
 
 <p align="center">
-  <img src="">
+  <img src="https://user-images.githubusercontent.com/110677094/183284643-1817f689-22ad-4cd7-be6b-963523d34a84.png">
 </p>
 
 ## Contributors
