@@ -65,7 +65,7 @@ $   sudo apt-get update
 $   sudo apt-get install iverilog gtkwave
 ```
 
-#### Functional Simulation
+### Functional Simulation
 
 To clone this repository and download the Netlist files for Simulation, enter the below commands in the terminal.
 
