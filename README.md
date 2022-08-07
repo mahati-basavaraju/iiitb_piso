@@ -73,14 +73,17 @@ GTKWave is a fully featured GTK+ based wave viewer for Unix, Win32, and Mac OSX 
 
 ### Functional Simulation
 
-To clone this repository and download the Netlist files for Simulation, enter the below commands in the terminal.
+To install git, clone this repository and download the required files for simulation, enter the below commands in the terminal.
 
 ```
 $   sudo apt install -y git
 $   git clone https://github.com/mahati-basavaraju/iiitb_piso
+
 $   cd iiitb_piso
-$   iverilog iiitb_piso.v iiitb_pwm_piso_tb.v
-$   ./a.out
+
+$   iverilog -o iiitb_piso iiitb_piso_tb.v  iiitb_piso.v 
+$   vvp iiitb_piso
+
 $   gtkwave iiitb_piso.vcd
 ```
 
