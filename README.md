@@ -54,11 +54,15 @@ Icarus Verilog (iverilog) is a Verilog simulation and synthesis tool. It operate
 
 GTKWave is a fully featured GTK+ based wave viewer for Unix, Win32, and Mac OSX which reads LXT, LXT2, VZT, FST, and GHW files as well as standard Verilog VCD/EVCD files and allows their viewing.
 
+### yosys
+
+Yosys is a framework for Verilog RTL synthesis. It currently has extensive Verilog-2005 support and provides a basic set of synthesis algorithms for various application domains. 
+
 ### Installation of iverilog and GTKwave
 
 <ul>
   <li>
-    <b> For Linux Mint/ Ubuntu </b> 
+    <b> For Ubuntu </b> 
     <br>
     <br>
     Open the terminal and enter the following commands
@@ -70,6 +74,14 @@ GTKWave is a fully featured GTK+ based wave viewer for Unix, Win32, and Mac OSX 
     
    </li>
 </ul>
+
+### Installation of yosys
+
+Follow the steps from the below git repository to install yosys on Ubuntu.
+
+<a href="https://github.com/YosysHQ/yosys/blob/master/README.md#installation">https://github.com/YosysHQ/yosys/blob/master/README.md#installation</a>
+
+## Simulation and Synthesis
 
 ### Functional Simulation
 
@@ -86,13 +98,71 @@ $   vvp iiitb_piso
 
 $   gtkwave iiitb_piso.vcd
 ```
+### Synthesis 
+
+Synthesis transforms the simple RTL design into a gate-level netlist with all the constraints as specified by the designer. In simple language, Synthesis is a process that converts the abstract form of design to a properly implemented chip in terms of logic gates.
+
+Synthesis takes place in multiple steps:
+
+  -  Converting RTL into simple logic gates.
+  -  Mapping those gates to actual technology-dependent logic gates available in the technology libraries.
+  -  Optimizing the mapped netlist keeping the constraints set by the designer intact
+  
+Invoke ''yosys' and execute the below commands to perform the synthesis of the above circuit.
+
+```
+$   read_liberty -lib ./lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+$   read_verilog iiitb_piso.v 
+
+$   synth -top iiitb_piso
+
+$   dfflibmap -liberty ./lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+$   abc -liberty -lib ./lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+$   show
+
+$   stat
+```
+
+### Gate Level Simulation (GLS)
+
+GLS implies running the testbench with netlist as the design under test. It is used to verify the logical correctness of the design after synthesis. It also ensures that the timing constraints are met.
+
+Execute below commands in the project directory to perform GLS.
+
+```
+$   iverilog -DFUNCTIONAL -DUNIT_DELAY=#0 ./verilog_model/primitives.v ./verilog_model/sky130_fd_sc_hd.v
+$   ./a.out
+$   gtkwave iiitb_piso.vcd
+```
 
 ## Functional Characteristics
 
 Find below simulation results when a 4-bit input '1011' is provided. Note that data_in is the input data, data_out is the output register, q is a temporary register to indicate shifting and, clk and load are clock and shift/load signals respectively.
 
+### Pre Synthesis Output Waveform
+
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/110677094/183284643-1817f689-22ad-4cd7-be6b-963523d34a84.png">
+  <img src="ttps://user-images.githubusercontent.com/110677094/185150624-b8ae1110-ba75-4904-8d48-9f014e71528b.png">
+</p>
+
+### Netlist representation
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/110677094/185150025-adeb6400-094f-4e44-8aae-315795f380c4.png">
+</p>
+
+### Statistics after synthesis
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/110677094/185150265-9a7db214-3782-452e-88c6-4edfde6844d3.png">
+</p>
+
+### Post Synthesis Output Waveform
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/110677094/185150474-eb801973-1ca5-4b89-b4da-73451c3bca2b.png">
 </p>
 
 ## Contributors
@@ -114,4 +184,4 @@ Find below simulation results when a 4-bit input '1011' is provided. Note that d
 - https://www.electronics-tutorial.net/sequential-logic-circuits/parallel-in-to-serial-out-piso-shift-register/
 - https://www.electronicshub.org/shift-registers/
 - https://www.youtube.com/watch?v=JzXGiVig4zE
-
+- http://www.vlsifacts.com/synthesis-in-vlsi/
