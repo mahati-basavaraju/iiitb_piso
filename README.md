@@ -145,11 +145,11 @@ Find below simulation results when a 4-bit input '1011' is provided. Note that d
 ### Pre Synthesis Simulation Result
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/110677094/185152480-c8b4bd20-0cab-4941-8918-707576f8fd4f.png">
-
+  <img src="https://user-images.githubusercontent.com/110677094/185170472-90a9e945-6555-41ac-95fc-1cf4813d2eae.png">
 </p>
 
-### Netlist representation
+### Netlist representation 
+
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/110677094/185150025-adeb6400-094f-4e44-8aae-315795f380c4.png">
@@ -163,7 +163,7 @@ Find below simulation results when a 4-bit input '1011' is provided. Note that d
 ### Post Synthesis Simulation Result
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/110677094/185153742-ce0c6283-c3ff-43a3-b6a4-31555b1ba195.png">
+  <img src="https://user-images.githubusercontent.com/110677094/185164154-bc472355-f5c2-41ad-8243-1fd1c2cea64c.png">
 </p>
 
 ## Contributors
