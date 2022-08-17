@@ -142,10 +142,11 @@ $   gtkwave iiitb_piso.vcd
 
 Find below simulation results when a 4-bit input '1011' is provided. Note that data_in is the input data, data_out is the output register, q is a temporary register to indicate shifting and, clk and load are clock and shift/load signals respectively.
 
-### Pre Synthesis Output Waveform
+### Pre Synthesis Simulation Result
 
 <p align="center">
-  <img src="ttps://user-images.githubusercontent.com/110677094/185150624-b8ae1110-ba75-4904-8d48-9f014e71528b.png">
+  <img src="https://user-images.githubusercontent.com/110677094/185152480-c8b4bd20-0cab-4941-8918-707576f8fd4f.png">
+
 </p>
 
 ### Netlist representation
@@ -159,10 +160,10 @@ Find below simulation results when a 4-bit input '1011' is provided. Note that d
   <img src="https://user-images.githubusercontent.com/110677094/185150265-9a7db214-3782-452e-88c6-4edfde6844d3.png">
 </p>
 
-### Post Synthesis Output Waveform
+### Post Synthesis Simulation Result
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/110677094/185150474-eb801973-1ca5-4b89-b4da-73451c3bca2b.png">
+  <img src="https://user-images.githubusercontent.com/110677094/185153742-ce0c6283-c3ff-43a3-b6a4-31555b1ba195.png">
 </p>
 
 ## Contributors
