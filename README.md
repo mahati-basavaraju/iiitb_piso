@@ -211,7 +211,7 @@ Add the verilog top module file in src folder and edit the config file as below.
   <img src='https://user-images.githubusercontent.com/110677094/187761449-91dc74f1-6f95-4cdf-a866-9601f2a20bf6.png'>
 </p>
 
-The config file should include paths of sky130 .lib files and the vsd_inv .lef file.
+The config file should include paths of sky130 .lib files and the vsd_inv .lef file for merging the sky130_vsdnv cells with our design. For detailed steps, visit <a href="https://github.com/Devipriya1921/Physical_Design_Using_OpenLANE_Sky130#inverter-standard-cell-layout--spice-extraction">https://github.com/Devipriya1921/Physical_Design_Using_OpenLANE_Sky130#inverter-standard-cell-layout--spice-extraction </a>
 
 
 Follow below commands to move to OpenLane working directory and move to OpenLane base.
@@ -261,6 +261,8 @@ To merge the vsd_inv lef file into our design, use below commands.
 <p align='center'>
   <img src='https://user-images.githubusercontent.com/110677094/187759529-b1291b7f-3c46-47ad-a17d-9e82a78bfc48.png'>
 </p>
+                                                                                                                   
+                                                                                                                                                                                                                                                                                                                       ### Synthesis                           
 
 Next step is to synthesise. Run below command.
 ```
@@ -275,7 +277,16 @@ The statistics after synthesis can be found in the <current_run_directory>/repor
 <p align='center'>
   <img src='https://user-images.githubusercontent.com/110677094/187760969-69dca37e-1157-41af-b606-6e556491ce1a.png'>
 </p>
+ 
+Find below screenshot of vsd_inv cells in the iiitb_piso.v file under the <current_run_dir>/results/synthesis ( where we can observe all the cell info) 
 
+<p align='center'>
+  <img src='https://user-images.githubusercontent.com/110677094/187929527-4909674a-69c6-421b-ac8a-bfd0d080ed02.png'>
+</p>
+                                                                                                                   
+                                                                                                                   
+### Floorplan
+                                                                                                                   
 Run floorplan
 ```
 % run_floorplan
@@ -312,7 +323,22 @@ Refer below image for the cells on floorplan (one can find them by zooming into 
 <p align='center'>
   <img src='https://user-images.githubusercontent.com/110677094/187762862-0ea00650-b6fb-4c93-a18c-9a19c38c762f.png'>
 </p>
+                                                                                                                   
+The die area and the core area report can be found in <current_run_dir>/reports/floorplan saves as 3-initial_fp_die_area.rpt and 3-initial_fp_core_area.rpt respectively. Find below screenshots.                                                                                                      
 
+- Die Area                                                                                                 
+<p align='center'>
+  <img src='https://user-images.githubusercontent.com/110677094/187928284-0a19db64-a32c-45c8-a472-1db045c0481a.png'>
+</p>
+                                                                                                               
+   
+- Core Area                                                                                                                  
+<p align='center'>
+  <img src='https://user-images.githubusercontent.com/110677094/187928148-db2fce82-3919-45d7-9c23-56ab8cc51986.png'>
+</p>
+                                                                                                             
+### Placement
+                                                                                                                   
 Run placement
 ```
 % run_placement
@@ -350,7 +376,8 @@ The zoomed in view of one of the sky130_inv cell is as below.
   <img src='https://user-images.githubusercontent.com/110677094/187923549-bc01a29a-38b1-4659-9d7e-66b6a34242c5.png'>
 </p>
 
-
+### Clock Tree Synthesis
+                                                                                                                   
 Run cts
 ```
 % run_cts
@@ -359,7 +386,8 @@ Run cts
   <img src='https://user-images.githubusercontent.com/110677094/187760401-e6a7c271-e6cb-410d-bd43-e899dfbfcbc2.png'>
 </p>
 
-
+### Routing
+                                                                                                                   
 Run routing
 ```
 % run_routing
