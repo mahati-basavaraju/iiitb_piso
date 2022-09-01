@@ -324,46 +324,30 @@ Run placement
 View the placement in the layout, using the below magic command in the terminal opened in the directory: <current_run_directory>/results/placement
 
 ```
-$ magic -T /home/mahati/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.min.lef def read iiitb_piso.def &
+$ magic -T /home/mahati/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read iiitb_piso.def &
 ```
 <p align='center'>
   <img src='https://user-images.githubusercontent.com/110677094/187763502-4b3d4615-da83-4477-9a45-9ea135329227.png'>
 </p>
 
-Also we can spot the required cell using getcell command in tcl console. Here, we try to find the sky130_vsdinv cell.
-
-```
-getcell sky130_vsdinv
-```
-
-<p align='center'>
-  <img src='https://user-images.githubusercontent.com/110677094/187763951-b9cf4bf1-3e21-4a64-b643-215c462b74ad.png'>
-</p>
-
-
-The required cell then gets selected and highlighted in white. You can spot it in the following images.
 
 Refer below image for full view of layout after placement
 
 <p align='center'>
-  <img src='https://user-images.githubusercontent.com/110677094/187764105-74d62462-6f27-4202-84c9-fa6996e4c6df.png'>
+  <img src='https://user-images.githubusercontent.com/110677094/187923176-d6fc7916-9fa8-472a-b4a3-60f4c9f9c01a.png'>
 </p>
 
 Refer below image for zoomed view of layout after placement
 
 <p align='center'>
-  <img src='https://user-images.githubusercontent.com/110677094/187764267-698bcd30-5b9a-4e11-b5cb-36586ab7778f.png'>
+  <img src='https://user-images.githubusercontent.com/110677094/187923310-a1deb6e0-b6f3-4abc-925c-ac31d611a771.png'>
 </p>
 
 
-<p align='center'>
-  <img src='https://user-images.githubusercontent.com/110677094/187764366-92c22628-23f8-4b71-b026-d88e3fda7834.png'>
-</p>
-
-The zoomed in view of sky130_inv cell is as below.
+The zoomed in view of one of the sky130_inv cell is as below.
 
 <p align='center'>
-  <img src='https://user-images.githubusercontent.com/110677094/187764820-599c1823-955c-4ade-87cf-c2d8a33e78a0.png'>
+  <img src='https://user-images.githubusercontent.com/110677094/187923549-bc01a29a-38b1-4659-9d7e-66b6a34242c5.png'>
 </p>
 
 
@@ -388,52 +372,35 @@ Run routing
 View the layout after routing, using the below magic command in the terminal opened in the directory: <current_run_directory>/results/routing
 
 ```
-$ magic -T /home/mahati/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.min.lef def read iiitb_piso.def &
+$ magic -T /home/mahati/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read iiitb_piso.def &
 ```
 <p align='center'>
   <img src='https://user-images.githubusercontent.com/110677094/187765247-70c0c557-c09f-4e27-bdfd-7394bdcbdcd2.png'>
 </p>
 
-Also we can spot the required cell using getcell command in tcl console. Here, we try to find the sky130_vsdinv cell.
-
-```
-getcell sky130_vsdinv
-```
-
-<p align='center'>
-  <img src='https://user-images.githubusercontent.com/110677094/187765420-26400d3b-83b3-445d-a70e-f2177b7f825d.png'>
-</p>
-
-
-The required cell then gets selected and highlighted in white. You can spot it in the following images.
-
 Refer below image for full view of layout after routing
 
 <p align='center'>
-  <img src='https://user-images.githubusercontent.com/110677094/187765546-fd202cec-3910-455f-94bb-eadd958e380d.png'>
+  <img src='https://user-images.githubusercontent.com/110677094/187923951-7c4e1c36-38e1-4f5a-9d1c-17f04ae79a9d.png'>
 </p>
 
 Refer below image for zoomed view of after routing
 
 <p align='center'>
-  <img src='https://user-images.githubusercontent.com/110677094/187764267-698bcd30-5b9a-4e11-b5cb-36586ab7778f.png'>
+  <img src='https://user-images.githubusercontent.com/110677094/187924499-0bbefdd8-f94c-4813-9522-e73fc0f12ae7.png'>
 </p>
 
 
+One of the sky130_vsdinv instance(Cell _11_) can be spotted here
+
 <p align='center'>
-  <img src='https://user-images.githubusercontent.com/110677094/187765711-7c911be9-877e-458c-ae83-a800e85171e6.png'>
+  <img src='https://user-images.githubusercontent.com/110677094/187924852-6e5c0faf-a1ee-40be-bc0d-4b008fe3aa73.png'>
 </p>
 
-The sky130_vsdinv instance can be spotted here
+The zoomed in view of one of the sky130_inv cell is as below.
 
 <p align='center'>
-  <img src='https://user-images.githubusercontent.com/110677094/187765853-1d384832-a052-4058-b81f-af1bbd9299ff.png'>
-</p>
-
-The zoomed in view of sky130_inv cell is as below.
-
-<p align='center'>
-  <img src='https://user-images.githubusercontent.com/110677094/187765961-4c475884-757e-4aac-980f-f533e54d8363.png'>
+  <img src='https://user-images.githubusercontent.com/110677094/187923734-1ad0b44f-8107-4226-a25a-2b4d36bcfc30.png'>
 </p>
 
 
