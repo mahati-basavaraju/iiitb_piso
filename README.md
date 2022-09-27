@@ -278,6 +278,20 @@ The statistics after synthesis can be found in the <current_run_directory>/repor
   <img src='https://user-images.githubusercontent.com/110677094/187760969-69dca37e-1157-41af-b606-6e556491ce1a.png'>
 </p>
  
+ <p align='center'>
+  <img src='https://user-images.githubusercontent.com/110677094/192569141-9a544734-7fba-4739-b793-0f9c64a41b48.png'>
+  </p>
+  
+  <b> Flop Ratio </b>
+  ```Flop Ratio= No. of d ffs/ No. of cells = 4/13 = 0.3077```
+  
+  (Refer below image)
+  
+   <p align='center'>
+  <img src='https://user-images.githubusercontent.com/110677094/192569661-9900507d-6d26-43e3-91eb-a04dda7943ce.png'>
+  </p>
+
+ 
 Find below screenshot of vsd_inv cells in the iiitb_piso.v file under the <current_run_dir>/results/synthesis ( where we can observe all the cell info) 
 
 <p align='center'>
@@ -431,6 +445,52 @@ The zoomed in view of one of the sky130_inv cell is as below.
   <img src='https://user-images.githubusercontent.com/110677094/187923734-1ad0b44f-8107-4226-a25a-2b4d36bcfc30.png'>
 </p>
 
+<b> Area</b>
+<p align='center'>
+  <img src='https://user-images.githubusercontent.com/110677094/192570491-15ef0519-cdab-4f90-8f4c-ee652f962df8.png'>
+</p>
+
+<b> Power Report </b>
+<p align='center'>
+  <img src='https://user-images.githubusercontent.com/110677094/192570278-cde89ce5-9eb8-4e6c-a4ae-75f6957a5ba4.png'>
+</p>
+
+### STA
+
+Run the entire flow using
+
+```
+./flow.tcl -design iiitb_piso
+```
+
+Install opensta using 
+
+```
+sudo apt install opensta
+```
+
+Run the below commands on sta base to get the report_checks
+
+```
+read_liberty -max /home/mahati/OpenLane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ff_n40C_1v95.lib
+read_liberty -min /home/mahati/OpenLane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_100C_1v60.lib
+```
+
+```
+read_verilog /home/mahati/OpenLane/designs/iiitb_piso_1/runs/RUN_2022.09.27_12.29.44/results/routing/iiitb_piso.resized.v
+link_design iiitb_piso
+read_sdc /home/mahati/OpenLane/designs/iiitb_piso_1/runs/RUN_2022.09.27_12.29.44/results/cts/iiitb_piso.sdc
+read_spef /home/mahati/OpenLane/designs/iiitb_piso_1/runs/RUN_2022.09.27_12.29.44/results/cts/iiitb_piso.nom.spef
+set_propagated_clock [all_clocks]
+report_checks
+report_clock_properties
+
+```
+
+<b>Max positive slack</b>
+<p align='center'>
+  <img src='https://user-images.githubusercontent.com/110677094/192570817-a62a5bf7-0fac-4420-8feb-7c9f81da4091.png'>
+</p>
 
 ## Contributors
 
