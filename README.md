@@ -492,6 +492,10 @@ report_clock_properties
   <img src='https://user-images.githubusercontent.com/110677094/192570817-a62a5bf7-0fac-4420-8feb-7c9f81da4091.png'>
 </p>
 
+```
+Frequency = 1/ (Clock period-Slack) = 1/(65-51.18) = 72.36 MHz
+```
+
 ## Contributors
 
 - <b> Mahati Basavaraju </b>
